@@ -8,6 +8,7 @@ export const ACTION_TYPE = {
   SOCKET_INIT: 'SOCKET_INIT',
   SOCKET_RECEIVE: 'SOCKET_RECEIVE',
   SOCKET_SEND: 'SOCKET_SEND',
+  SOCKET_ERROR: 'SOCKET_ERROR',
 };
 
 /**
@@ -79,4 +80,13 @@ export const sendMessage = (text, name) => ({
       timeStamp: moment().unix(),
     },
   },
+});
+
+/**
+ * Create error action
+ * @param {Error} error
+ */
+export const sendError = errorMessage => ({
+  type: ACTION_TYPE.SOCKET_ERROR,
+  payload: errorMessage,
 });
