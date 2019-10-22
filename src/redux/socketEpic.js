@@ -21,10 +21,11 @@ const send$ = (action$, socket$) =>
 
 const handleError = error => {
   Toaster.create({ position: 'bottom' }).show({
-    message: error.message,
+    message: 'Cannot connect to socket server',
     intent: 'danger',
+    timeout: 0,
   });
-  return of(sendError(error.message));
+  return of(sendError('Cannot connect to socket server'));
 };
 
 const socketEpic = (action$, store$, { socket$ }) =>

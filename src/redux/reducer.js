@@ -45,7 +45,7 @@ export default (state = initialState, { type, payload }) => {
       case SOCKET_EVENT_TYPE.DELIVERED_CHAT:
         return {
           ...state,
-          deliveredMessageIds: [...state.deliveredMessageIds, payload.data.id],
+          deliveredMessageIds: [payload.data.id, ...state.deliveredMessageIds],
         };
 
       case SOCKET_EVENT_TYPE.RECEIVE_CHAT:
