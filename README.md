@@ -86,11 +86,11 @@ To reduce many round trips and network traffic, I would ask the back-end guys to
 
 #### Why not static type check (Flow / Typescript)
 
-Adding static type check to React project is believe to be good practice for type safety and facilitate development process.
+Adding static type check to React project is believed to be a good practice for type safety and facilitate development process.
 However, the reasons why I'm not using static type to current project is listed below:
 
 - Current project is relatively small. Adding static type check won't speed up development process very much.
-- Requiring safety type checking places like socket event is runtime type-check, so TypeScript and friends won't shine much here.
+- Requiring type checking places like socket event object is runtime type-check, TypeScript and friends won't shine much here.
 
 When the project grows in size, it might be useful to introduce static type check to our code base.
 
@@ -99,7 +99,7 @@ Another good option is ReasonML but it hasn't been widely adopted yet.
 
 #### Small UX improvement: Experimental message sent status
 
-After sending a message to server, it will send back a signal to tell that the message has been delivered.
+After sending a message to server, server will send back a signal to tell that the message has been delivered.
 
 With delivered signal we can update current message (eg: `isDelivered: true`) and trigger updating DOM.
 But this may trigger re-render whole messages list which cause performance dropped.
