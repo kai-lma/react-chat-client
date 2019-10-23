@@ -1,3 +1,4 @@
+import { path, pathOr } from 'ramda';
 import { ACTION_TYPE, SOCKET_EVENT_TYPE } from './actions';
 
 const initialState = {
@@ -32,21 +33,26 @@ export default (state = initialState, { type, payload }) => {
       case SOCKET_EVENT_TYPE.CONNECTED:
         return { ...state, connected: true };
 
-      case SOCKET_EVENT_TYPE.SIGN_IN_SUCCESS:
+      case SOCKET_EVENT_TYPE.SIGN_IN_SUCCESS: {
+        const chatMembers = pathOr([], ['data', 'chatMembers'])(payload);
+        const messages = pathOr([], ['data', 'chatHistory'])(payload);
         return {
           ...state,
           signingIn: false,
           signedIn: true,
           name: payload.data.name,
-          chatMembers: payload.data.chatMembers,
-          messages: [...payload.data.chatHistory],
+          chatMembers,
+          messages,
         };
+      }
 
-      case SOCKET_EVENT_TYPE.DELIVERED_CHAT:
+      case SOCKET_EVENT_TYPE.DELIVERED_CHAT: {
+        const messageId = path(['data', 'id'])(payload);
         return {
           ...state,
-          deliveredMessageIds: [payload.data.id, ...state.deliveredMessageIds],
+          deliveredMessageIds: [messageId, ...state.deliveredMessageIds],
         };
+      }
 
       case SOCKET_EVENT_TYPE.RECEIVE_CHAT:
         return {

@@ -26,14 +26,14 @@ Web socket fits for our requirements and provides better user experiences.
 #### Scaling
 
 With web socket, our app would be easier to scaling both server and client side,
-especially flexible to changes and easily adding more functions (such as adding typing status, read user, delete message in realtime...)
+flexible to changes and easily adding more functions (such as adding typing status, read user, delete message in realtime...)
 
 ### Why Redux Observable and RxJS
 
 #### Declarative coding style
 
 Redux Observable is a Redux middleware library empowered by strength of RxJS.
-Providing ways to compose and cancel async actions to create side effects with declarative code (Functional Reactive Programming style) for readable and easier to maintain.
+Providing ways to compose and cancel async actions to create side effects with declarative code (Functional Reactive Programming style) for more readable and easier to maintain.
 
 #### Fit for socket
 
@@ -76,11 +76,11 @@ To reduce many round trips and network traffic, I would ask the back-end guys to
 
 #### Socket event flows
 
-<center>
+<p align="center">
 
 ![*socket server sequence diagram*](docs/socket-sequence-diagram.png)
 
-</center>
+</p>
 
 ### Other notes
 
