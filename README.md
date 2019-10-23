@@ -77,7 +77,9 @@ To reduce many round trips and network traffic, I would ask the back-end guys to
 #### Socket event flows
 
 <center>
+
 ![socket server sequence diagram](docs/socket-sequence-diagram.png)
+
 </center>
 
 ### Other notes
