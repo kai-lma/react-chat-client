@@ -37,7 +37,7 @@ Providing ways to compose and cancel async actions to create side effects with d
 
 #### Fit for socket
 
-RxJS webSocket [_interface_](https://rxjs-dev.firebaseapp.com/api/webSocket/webSocket) is easy to work with.
+RxJS webSocket [interface](https://rxjs-dev.firebaseapp.com/api/webSocket/webSocket) is easy to work with.
 Expressly it's really great when writing mock stubs for performance debugging.
 
 #### Easy for testing
@@ -46,7 +46,7 @@ By using Redux Observable we can dependency-injecting our socket stream for not 
 
 As RxJS webSocket is a `Subject` so we can inject a mock `Subject` to stub every events from server without using extra mocking library like Sinon.
 
-Also testing asynchronous event with [_RxJS marble diagram_](https://github.com/ReactiveX/rxjs/blob/master/docs_app/content/guide/testing/marble-testing.md) may leverage testing quality.
+Also testing asynchronous event with [RxJS marble diagram](https://github.com/ReactiveX/rxjs/blob/master/docs_app/content/guide/testing/marble-testing.md) may leverage testing quality.
 
 #### Robustness
 
@@ -76,11 +76,9 @@ To reduce many round trips and network traffic, I would ask the back-end guys to
 
 #### Socket event flows
 
-<p align="center">
-
-![*socket server sequence diagram*](docs/socket-sequence-diagram.png)
-
-</p>
+<center>
+![socket server sequence diagram](docs/socket-sequence-diagram.png)
+</center>
 
 ### Other notes
 
@@ -124,7 +122,7 @@ Basically the WebSocket protocol doesn’t handle authorization or authenticatio
 This means our current chat app doesn't have any authentication mechanism in it.
 
 For more secured, we should authenticate users before the web socket connection establishes.
-We could follow [_the ticket pattern_](http://lucumr.pocoo.org/2012/9/24/websockets-101/) to achieve this.
+We could follow [the ticket pattern](http://lucumr.pocoo.org/2012/9/24/websockets-101/) to achieve this.
 
 ### Quality
 
